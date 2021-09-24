@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'App\Http\Controllers\PagesController@index');
 Route::get('/about', 'App\Http\Controllers\PagesController@about');
 Route::get('/services', 'App\Http\Controllers\PagesController@services');
-
+Route::resource('posts', PostsController::class);
 /*Route::get('/user/{id}', function($id){
     return 'welcome user number ' .$id;
 });*/
@@ -25,7 +26,6 @@ Route::get('/services', 'App\Http\Controllers\PagesController@services');
     return view('pages.about');
 });*/
 
-
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index']);
