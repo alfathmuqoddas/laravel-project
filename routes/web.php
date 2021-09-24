@@ -13,6 +13,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'App\Http\Controllers\PagesController@index');
+Route::get('/about', 'App\Http\Controllers\PagesController@about');
+Route::get('/services', 'App\Http\Controllers\PagesController@services');
+
+/*Route::get('/user/{id}', function($id){
+    return 'welcome user number ' .$id;
+});*/
+
+/*Route::get('/about', function(){
+    return view('pages.about');
+});*/
+
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
