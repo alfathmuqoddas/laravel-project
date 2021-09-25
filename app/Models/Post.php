@@ -12,4 +12,9 @@ class Post extends Model
     protected $table = 'posts';
     public $primaryKey = 'id';
     public $timestamps = true;
+
+    //connect posts to user_id
+    public function user(){
+    	return $this->belongsTo('App\User')
+    }
 }
