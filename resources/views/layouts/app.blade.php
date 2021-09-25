@@ -20,7 +20,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
-<body>
+<body style="font-size: 1rem;">
     <div id="app">
         @include('inc.navbar')
 

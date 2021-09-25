@@ -15,6 +15,6 @@ class Post extends Model
 
     //connect posts to user_id
     public function user(){
-    	return $this->belongsTo('App\User')
+    	return $this->belongsTo('App\Models\User');
     }
 }
